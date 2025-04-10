@@ -1,0 +1,116 @@
+/* definiranje CSS varijabli */
+:root {
+    --color-animacija: #3498db;
+    --color-romanticni: #e74c3c;
+    --color-krimic: #9b59b6;
+    --color-drama: #f1c40f;
+    --color-dokumentarni: #2ecc71;
+    --color-akcija: #e67e22;
+    --color-komedija: #34495e;
+
+    --chart-size: 300px;
+}
+
+/*  grafikon pie chart */
+.chart-section {
+    text-align: center;
+    margin: 2rem auto;
+}
+
+.pie-chart {
+    width: var(--chart-size);
+    height: var(--chart-size);
+    background: conic-gradient(
+        var(--color-animacija) 0% 12.5%,
+        var(--color-romanticni) 12.5% 25%,
+        var(--color-krimic) 25% 37.5%,
+        var(--color-drama) 37.5% 50%,
+        var(--color-dokumentarni) 50% 62.5%,
+        var(--color-akcija) 62.5% 75%,
+        var(--color-komedija) 75% 100%
+    );
+    border-radius: 50%;
+    animation: growChart 2s ease-in-out;
+    clip-path: circle(50%);
+}
+
+/* pojavljivanje */
+@keyframes growChart {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* na hover postaje nesto svjetlije */
+.pie-chart:hover {
+    filter: brightness(1.2);
+}
+
+/* povecavanje charta na hover */
+.pie-chart:hover .segment {
+    transform: scale(1.05);
+}
+
+.legend {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    list-style: none;
+    padding: 0;
+}
+
+.legend li {
+    margin: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+/* povecavanje teksta na hover */
+.legend li:hover {
+    transform: scale(1.1);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.color {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+    border-radius: 3px;
+}
+
+.color.animacija {
+    background-color: var(--color-animacija);
+}
+
+.color.romanticni {
+    background-color: var(--color-romanticni);
+}
+
+.color.krimic {
+    background-color: var(--color-krimic);
+}
+
+.color.drama {
+    background-color: var(--color-drama);
+}
+
+.color.dokumentarni {
+    background-color: var(--color-dokumentarni);
+}
+
+.color.akcija {
+    background-color: var(--color-akcija);
+}
+
+.color.komedija {
+    background-color: var(--color-komedija);
+}

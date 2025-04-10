@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Grafikon za prikaz filmova">
+    <meta name="author" content="Maja Varšava">
+    <meta name="keywords" content="grafikon, filmovi, CSS, web programiranje">
+
+    <link rel="stylesheet" href="/styles/grafikon.css">
+    <link rel="stylesheet" href="/styles/style_slike.css">
+    <link rel="stylesheet" href="/styles/style.css">
+	<link rel="stylesheet" href="/styles/table.css">
+    <title>Grafikon Filmova</title>
+</head>
+<body>
+    <header>
+        <h1>Grafikon Filmova</h1>
+    </header>
+
+    <nav aria-labelledby="primarna-navigacija">
+        <ul class="nav-menu">
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Menu</a>
+                <div class="dropdown-content">
+                    <a href="/">Home</a>
+						<a href="/slike">Galerija</a>
+						<a href="/grafikon">Grafikon</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="chart-section">
+            <h2>Prikaz Filmova po Zanrovima</h2>
+            <div class="pie-chart"></div>
+            <ul class="legend">
+                <li><span class="color animacija"></span> Animacija</li>
+                <li><span class="color romanticni"></span> Romantični</li>
+                <li><span class="color krimic"></span> Krimić</li>
+                <li><span class="color drama"></span> Drama</li>
+                <li><span class="color dokumentarni"></span> Dokumentarni</li>
+                <li><span class="color akcija"></span> Akcija</li>
+                <li><span class="color komedija"></span> Komedija</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025. Web Programiranje. Sva prava pridržana.</p>
+    </footer>
+</body>
+</html>

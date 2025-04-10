@@ -1,0 +1,77 @@
+
+/* tablica stoji lijevo i uredena je*/
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto 20px;
+    display: inline-block;
+    width: auto;
+    text-align: left;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+
+th {
+    background-color: #d168de;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid #ddd; 
+}
+
+th, td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* slike su desno */
+aside {
+    margin: 20px auto;
+    text-align: center;
+}
+
+aside img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Responsive layout */
+@media (min-width: 768px) {
+    .table-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    table {
+        margin-left: 10px;
+    }
+
+    aside {
+        margin-left: 20px;
+        text-align: left;
+    }
+}
