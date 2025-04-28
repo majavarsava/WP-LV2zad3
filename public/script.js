@@ -30,7 +30,7 @@ function prikaziFilmove(filmovi) {
 
     const prvih20Filmova = filmovi.slice(0, 20);
 
-    for (const film of prvih20Filmova) {
+    prvih20Filmova.forEach((film, index) => {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${film.title}</td>
@@ -38,11 +38,11 @@ function prikaziFilmove(filmovi) {
             <td>${film.year}</td>
             <td>${film.duration}</td>
             <td>${film.avg_vote}</td>
-            <td><button class="dodaj-btn" data-index="${sviFilmovi.indexOf(film)}">Dodaj u košaricu</button></td>
+            <td><button class="dodaj-btn" data-index="${index}">Dodaj u košaricu</button></td>
         `;  
         // tu dodajemo svakom filmu button koji nam sluzi za dodavanje u kosaricu
         tbody.appendChild(row);
-    }
+    });
 
     document.querySelectorAll('.dodaj-btn').forEach(button => {
         button.addEventListener('click', () => {
@@ -87,7 +87,7 @@ function filtriraj() {
     if (filtriraniFilmovi.length === 0) {
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td colspan="5" style="text-align: center; padding: 20px;">
+            <td colspan="6" style="text-align: center; padding: 20px;">
                 Nema filmova koji odgovaraju zadanim filterima.
             </td>
         `;
