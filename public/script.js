@@ -64,14 +64,15 @@ durationInput.addEventListener('input', () => {
 });
 
 function filtriraj() {
-    const odabraniZanrovi = Array.from(document.querySelectorAll('#filter-genre input[type="checkbox"]:checked'))
-    .map(checkbox => checkbox.value);
+    const odabraniZanrovi = Array.from(document.querySelectorAll('.checkbox-group input[type="checkbox"]:checked'))
+    .map(checkbox => checkbox.value.toLowerCase());
     const minimalnaGodina = document.getElementById('filter-year').value;
     const minimalnaOcjena = parseFloat(document.getElementById('filter-rating').value);
     const minimalnaTrajanje = parseInt(document.getElementById('filter-duration').value);
 
     const filtriraniFilmovi = sviFilmovi.filter(film => {
-        const uvjetZanr = odabraniZanrovi.length === 0 || (film.genre && odabraniZanrovi.some(zanr => film.genre.includes(zanr)));
+        const filmZanr = film.genre ? film.genre.toLowerCase() : '';
+        const uvjetZanr = odabraniZanrovi.length === 0 || (film.genre && odabraniZanrovi.some(zanr => filmZanr.includes(zanr)));
         const uvjetGodina = minimalnaGodina === "" || film.year >= Number(minimalnaGodina);
         const uvjetOcjena = film.avg_vote >= minimalnaOcjena;
         const uvjetTrajanje = film.duration >= minimalnaTrajanje;
@@ -161,7 +162,7 @@ document.getElementById('primijeni-filtere').addEventListener('click', filtriraj
 document.getElementById('resetiraj-filtere').addEventListener('click', resetirajFiltere);
 
 function resetirajFiltere() {
-  const zanrovi = document.querySelectorAll('#filter-genre input[type="checkbox"]');
+  const zanrovi = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
   zanrovi.forEach(checkbox => checkbox.checked = false);
 
   document.getElementById('filter-year').value = '';
