@@ -3,7 +3,7 @@
 
 table {
     border-collapse: collapse;
-    margin: 0 auto 20px;
+    margin: 20px 0 20px 50px;
     display: inline-block;
     width: auto;
     text-align: left;
@@ -13,6 +13,9 @@ table {
     background-color: #f9f9f9;
 }
 
+table.static-table{
+    margin-left: 50px !important;
+}
 
 th {
     background-color: #d168de;
@@ -74,4 +77,27 @@ aside img {
         margin-left: 20px;
         text-align: left;
     }
+}
+
+/* tablica za lv3 */
+.full-width-section {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#filmovi-tablica {
+    margin: 0 auto;
+    table-layout: fixed;
+    width: 90%;     
+    border-collapse: collapse;
+}
+
+#filmovi-tablica thead tr th {
+    width: 25%;
+}
+
+#filmovi-tablica th, #filmovi-tablica td {
+    padding: 10px;
+    text-align: center;
 }

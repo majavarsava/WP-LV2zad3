@@ -165,11 +165,14 @@ input, button {
 }
 
 button {
-    background-color: #3498db;
-    color: white;
+    padding: 10px 20px;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
-    width: 50%;
+    font-size: 1em;
+    width: 120px; /* Fixed width for consistent button size */
+    text-align: center;
+    box-sizing: border-box;
 }
 
 button:hover {
@@ -205,3 +208,218 @@ footer {
         width: 100%;
     }
 }
+
+
+
+/* ------------------------------------------------ */
+/*                      FILTERI                     */
+/* ------------------------------------------------ */
+
+/* Filter Section */
+#filteri {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filter-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.filter-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 400px;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 5px;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin: 0;
+}
+
+input[type="number"] {
+    width: 100px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+input[type="range"] {
+    width: 100px;
+}
+
+#duration-value {
+    font-size: 1em;
+    margin-left: 10px;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#primijeni-filtere {
+    background-color: #3498db;
+    color: white;
+}
+
+#primijeni-filtere:hover {
+    background-color: #2980b9;
+}
+
+#resetiraj-filtere {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#resetiraj-filtere:hover {
+    background-color: #c0392b;
+}
+
+@media (max-width: 768px) {
+    .filter-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .checkbox-group {
+        max-width: 100%;
+    }
+
+    input[type="number"], input[type="range"] {
+        width: 100%;
+    }
+
+    .filter-buttons {
+        justify-content: center;
+    }
+
+    button {
+        width: 100%; 
+        max-width: 120px;
+    }
+}
+
+
+/* ------------------------------------------------ */
+/*                      KOŠARICA                     */
+/* ------------------------------------------------ */
+
+#kosarica {
+    position: fixed;
+    right: 20px;
+    top: 10px;
+    width: 250px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+#kosarica h2 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#lista-kosarice {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#lista-kosarice li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9em;
+}
+
+#lista-kosarice li button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+#lista-kosarice li button:hover {
+    background-color: #c0392b;
+}
+
+#potvrdi-kosaricu {
+    width: 100%;
+    background-color: #3498db;
+    color: white;
+    margin-top: 10px;
+}
+
+#potvrdi-kosaricu:hover {
+    background-color: #2980b9;
+}
+
+.dodaj-btn {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.dodaj-btn:hover {
+    background-color: #27ae60;
+}
+
+@media (max-width: 768px) {
+    #kosarica {
+        position: static;
+        width: 90%;
+        margin: 20px auto;
+    }
+}
+

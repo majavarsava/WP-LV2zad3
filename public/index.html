@@ -10,6 +10,8 @@
 		<meta name="keywords" content="web programiranje, LV1, HTML, projekt">
 		<!-- Opis govori da je lv1, autor govori koji je student, keywords govore o cemu je. -->
 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script> <!-- PapaParse -->
+
 		<!--dodati link za css dokumente -->
 		<link rel="stylesheet" href="/styles/style_slike.css">
     	<link rel="stylesheet" href="/styles/style.css">
@@ -40,7 +42,7 @@
 		<h1>Popis Filmova</h1>
 
 		<section class="table-section">
-			<table>
+			<table class="static-table">
 				<tr>
 					<th>ID</th>
 					<th>Naslov</th>
@@ -89,7 +91,74 @@
 			</aside>
 		</section>
 
+		<!-- ----------------------------------------------------------------------------------------------- -->
+		<!--                                               LV3                                               -->
+		<!-- ----------------------------------------------------------------------------------------------- -->
 
+		<section id="filteri" aria-labelledby="filteri-heading">
+			<h2>Filtriraj filmove</h2>
+			<div class="filter-container">
+				<div class="filter-group">
+					<label for="filter-genre">Žanrovi:</label>
+					<div class="checkbox-group">
+						<label><input type="checkbox" value="Animation"> Animacija</label>
+						<label><input type="checkbox" value="Romance"> Romantika</label>
+						<label><input type="checkbox" value="Crime"> Krimić</label>
+						<label><input type="checkbox" value="Documentary"> Dokumentarni</label>
+						<label><input type="checkbox" value="Action"> Akcija</label>
+						<label><input type="checkbox" value="Comedy"> Komedija</label>
+						<label><input type="checkbox" value="Drama"> Drama</label>
+						<label><input type="checkbox" value="Adventure"> Avantura</label>
+						<label><input type="checkbox" value="Fantasy"> Fantazija</label>
+						<label><input type="checkbox" value="Horror"> Horor</label>
+						<label><input type="checkbox" value="Sci-Fi"> Znanstvena fantastika</label>
+						<label><input type="checkbox" value="Thriller"> Triler</label>
+					</div>
+				</div>
+				<div class="filter-group">
+					<label for="filter-year">Minimalna godina:</label>
+					<input type="number" id="filter-year" placeholder="Godina" min="1900" max="2025">
+				</div>
+				<div class="filter-group">
+					<label for="filter-rating">Minimalna ocjena:</label>
+					<input type="number" id="filter-rating" min="0" max="10" step="0.1" value="5">
+				</div>
+				<div class="filter-group">
+					<label for="filter-duration">Minimalno trajanje (min):</label>
+					<input type="range" id="filter-duration" min="0" max="300" step="5" value="60">
+					<span id="duration-value">60</span>
+				</div>
+				<div class="filter-buttons">
+					<button id="primijeni-filtere">Filtriraj</button>
+					<button id="resetiraj-filtere">Resetiraj</button>
+				</div>
+			</div>
+		</section>
+
+		<aside id="kosarica" aria-labelledby="kosarica-heading">
+			<h2 id="kosarica-heading">Moja košarica</h2>
+			<ul id="lista-kosarice"></ul>
+			<button id="potvrdi-kosaricu">Potvrdi odabir</button>
+		</aside>
+
+		<section class="full-width-section">
+			<table id="filmovi-tablica">
+				<thead>
+				<tr>
+					<th>Naslov</th>
+					<th>Žanr</th>
+					<th>Godina</th>
+					<th>Trajanje (min)</th>
+					<th>Ocjena</th>
+					<th>Dodaj</th>
+				</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</section>
+		  
+		<script src="script.js"></script>
 
 		<!-- <section>  -->
 			<!-- dodati neke od obilježja za ARIA -->
